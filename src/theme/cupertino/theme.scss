@@ -1,0 +1,57 @@
+$fontFamily: Lucida Grande, Lucida Sans, Arial, sans-serif;
+$fontSize: 1em;
+$borderRadius: 6px;
+$disabledOpacity: 0.35;
+
+//Header
+$headerBorderWidth: 1px;
+$headerBorderColor: none;
+$headerBgColor: #1D2023;
+$headerTextColor: rgba(255, 255, 255, 1);
+$headerFontWeight: bold;
+$headerIconTextColor: #222222;
+
+//Content
+$contentBorderWidth: 0px;
+$contentBorderColor: #dddddd;
+$contentBgColor: #222629;
+$contentTextColor: rgba(255, 255, 255, 0.5);
+
+//Default State
+$stateDefaultBorderWidth: 1px;
+$stateDefaultBorderColor: #222629;
+$stateDefaultBgColor: #222629;
+$stateDefaultTextColor: rgba(255, 255, 255, 0.5);
+
+//Active State
+$stateActiveBorderColor: #1D2023;
+$stateActiveBgColor: #1D2023;
+$stateActiveTextColor: #ffffff;
+
+//Highlight State
+$stateHighlightBorderColor: #f9dd34;
+$stateHighlightBgColor: #ffef8f;
+$stateHighlightTextColor: #363636;
+
+//Focus State
+$stateFocusBorderColor: #74b2e2;
+$stateFocusBgColor: #e4f1fb;
+$stateFocusTextColor: #0070a3;
+
+//Error State
+$stateErrorBorderColor: #cd0a0a;
+$stateErrorBgColor: #cd0a0a;
+$stateErrorTextColor: #ffffff;
+
+//Hover State
+$stateHoverBorderColor: #74b2e2;
+$stateHoverBgColor: #1D2023;
+$stateHoverTextColor: rgba(255, 255, 255, 1);
+
+//Forms
+$inputBgColor: #ffffff;
+$inputTextColor: #222222;
+$invalidInputBorderColor: #cd0a0a;
+$inputGroupTextColor: #2779aa;
+
+@import '../_theme';
