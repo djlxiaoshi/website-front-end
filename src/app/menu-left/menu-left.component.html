@@ -1,6 +1,6 @@
-<ng-container>
+<div class="menu-sidebar">
   <div class="djl-msg-wrap ui-g">
-    <a href="#" class="avatar-wrap ui-g-12">
+    <a class="avatar-wrap ui-g-12" (click)="showMsgDialog()">
       <img src="" alt="" class="avatar">
     </a>
     
@@ -10,4 +10,11 @@
     </div>
   </div>
   <p-panelMenu [model]="items" [style]="{'width':'100%'}"></p-panelMenu>
-</ng-container>
+  <div class="more-about-me">
+    <a href=""><i class="fa fa-github"></i></a>
+    <a href=""><i class="fa fa-weixin"></i></a>
+    <a href=""><i class="fa fa-qq"></i></a>
+  </div>
+</div>
+
+<app-djl-msg [msgVisible]="userMsgVisible" (msgVisibleChange)="onMsgVisibleChange($event)"></app-djl-msg>

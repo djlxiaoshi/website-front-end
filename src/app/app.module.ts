@@ -11,13 +11,19 @@ import { MenuLeftComponent } from './menu-left/menu-left.component';
 import {RoutesModule} from './routing/routes.module';
 
 // primeNG
-import {ButtonModule, PanelMenuModule, SidebarModule} from 'primeng/primeng';
+import {ButtonModule, PanelMenuModule, SidebarModule, DialogModule} from 'primeng/primeng';
+import { ArticlesComponent } from './articles/articles.component';
+import { JavascriptComponent } from './articles/javascript/javascript.component';
+import { DjlMsgComponent } from './djl-msg/djl-msg.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenuLeftComponent
+    MenuLeftComponent,
+    ArticlesComponent,
+    JavascriptComponent,
+    DjlMsgComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,8 @@ import {ButtonModule, PanelMenuModule, SidebarModule} from 'primeng/primeng';
     RoutesModule,
     ButtonModule,
     PanelMenuModule,
-    SidebarModule
+    SidebarModule,
+    DialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

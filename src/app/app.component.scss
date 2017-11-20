@@ -1,10 +1,9 @@
 .djl-container{
   position: relative;
+  display: flex;
 }
 .menu-sidebar{
-  height: 100vh;
-  background-color: #222629;
-  padding: 0;
+  flex: 0 0 150;
 }
 
 #menu-icon-wrap{

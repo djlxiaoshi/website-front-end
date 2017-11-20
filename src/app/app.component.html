@@ -1,15 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div class="ui-g djl-container">
-  <div class="ui-lg-2 ui-md-3 menu-sidebar">
+<div class="djl-container">
+  <div class="menu-sidebar">
     <app-menu-left></app-menu-left>
   </div>
-  <ng-container class="ui-lg-10 ui-md-9 ui-sm-12">
+  <ng-container class="">
     <router-outlet></router-outlet>
   </ng-container>
 
 
   <!-- only display on mobile device -->
-  <p-sidebar [(visible)]="sidebarVisible" position="left" *ngIf="sidebarVisible">
+  <p-sidebar [(visible)]="sidebarVisible" position="left">
       <app-menu-left></app-menu-left>
   </p-sidebar>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, transition } from '@angular/core';
 import { MenuItem } from 'primeng/primeng';
 
 import {routes} from '../routing/routes.config';
@@ -14,16 +14,20 @@ export class MenuLeftComponent implements OnInit {
   constructor() { }
 
   private items: MenuItem[];
+  private userMsgVisible = false;
 
   ngOnInit() {
     this.items = [{
         label: '首页',
-        icon: 'fa-home'
+        icon: 'fa-home',
+        routerLink: 'home'
     },
     {
       label: '我的文章',
+      icon: 'fa-book',
+      style: {},
       items: [
-        {label: 'Javascript', icon: 'fa-refresh'},
+        {label: 'Javascript', icon: 'fa-refresh', routerLink: 'articles/javascript'},
         {label: 'CSS', icon: 'fa-css3'},
         {label: 'Vue', icon: 'fa-vimeo'},
         {label: 'Angular', icon: 'fa-amazon'}
@@ -60,5 +64,13 @@ export class MenuLeftComponent implements OnInit {
         return _route;
       });
     }
+  }
+
+  showMsgDialog() {
+    this.userMsgVisible = true;
+  }
+
+  onMsgVisibleChange(status) {
+    this.userMsgVisible = status;
   }
 }
