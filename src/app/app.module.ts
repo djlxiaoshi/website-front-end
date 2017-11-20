@@ -11,7 +11,7 @@ import { MenuLeftComponent } from './menu-left/menu-left.component';
 import {RoutesModule} from './routing/routes.module';
 
 // primeNG
-import {ButtonModule, PanelMenuModule} from 'primeng/primeng';
+import {ButtonModule, PanelMenuModule, SidebarModule} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import {ButtonModule, PanelMenuModule} from 'primeng/primeng';
     BrowserAnimationsModule,
     RoutesModule,
     ButtonModule,
-    PanelMenuModule
+    PanelMenuModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

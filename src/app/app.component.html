@@ -1,10 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<ng-container class="ui-g">
-  <div class="ui-g-2 menu-sidebar">
+<div class="ui-g djl-container">
+  <div class="ui-lg-2 ui-md-3 menu-sidebar">
     <app-menu-left></app-menu-left>
   </div>
-  <ng-container class="ui-g-10">
+  <ng-container class="ui-lg-10 ui-md-9 ui-sm-12">
     <router-outlet></router-outlet>
   </ng-container>
-</ng-container>
 
+
+  <!-- only display on mobile device -->
+  <p-sidebar [(visible)]="sidebarVisible" position="left" *ngIf="sidebarVisible">
+      <app-menu-left></app-menu-left>
+  </p-sidebar>
+
+  <div id="menu-icon-wrap">
+    <a class="menu-icon" (click)="showSidebar()">
+      <i class="fa fa-list"></i>
+    </a>
+  </div>
+  <!-- only display on mobile device (end) -->
+</div>

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  sidebarVisible = false;
+
+  showSidebar() {
+    this.sidebarVisible = true;
+  }
 }

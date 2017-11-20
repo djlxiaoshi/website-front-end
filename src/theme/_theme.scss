@@ -509,7 +509,7 @@
 .ui-panelmenu {
     .ui-panelmenu-header {
         margin-top: -2px;
-        padding: 10px 5px;
+        padding: 10px 55px;
         &:not(.ui-state-active):hover {
             @include hover-element();
             border-color: $stateDefaultBorderColor;
