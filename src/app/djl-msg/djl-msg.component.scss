@@ -1,24 +1,44 @@
 .djl-msg-wrap{
-  position: fixed;
-  background-color: #ffffff;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 3800;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .avatar, .nickname, .ename{
+    margin: 10px 20px;
+  }
   .avatar {
     width: 50px;
     height: 50px;
     background-color: lightgreen;
     border-radius: 100%;
-    overflow: hidden;   
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
   }
-  .back-btn{
-    background-color: rgba(76, 76, 76, 0.5);
-    padding: 5px;
-    border-radius: 100%;
-    i {
-      font-size: 16px;
-    }
+  .nickname{
+
+  }
+  .ename{
+
+  }
+}
+
+/deep/ .ui-fileupload-choose{
+  background-color: #fbfdff;
+  border: 1px dashed #c0ccda;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  line-height: 146px;
+  vertical-align: middle;
+  &:hover{
+    background-color: #fbfdff;
+    border: 1px dashed #c0ccda;
+  }
+  .ui-button-icon-left{
+    left: 16px;
+    color: #8c939d;
   }
 }

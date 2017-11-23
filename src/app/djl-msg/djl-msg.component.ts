@@ -1,5 +1,7 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+
+import Tooltips from '../shared/utils/izitoast.util';
 
 @Component({
   selector: 'app-djl-msg',
@@ -22,12 +24,37 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 })
 export class DjlMsgComponent implements OnInit {
   @Input() msgVisible = false;
+  @ViewChild('avatar') avatar;
 
   @Output() msgVisibleChange = new EventEmitter<any>();
+
+  private nickname = 'DJL箫氏';
+  private ename = 'Lyon';
+
+  msgs;
+
+  uploadedFiles = [];
+
   constructor() { }
 
   ngOnInit() {
   }
+
+  changeAvatar() {
+
+  }
+  fileSelect(event) {
+  }
+
+  uploadFailed(msg) {
+    Tooltips('error', msg, 'warning');
+  }
+
+  uploadSuccess(event) {
+    debugger
+  }
+
+  signUp() {}
 
   closeMsgDialog() {
     this.msgVisibleChange.emit(false);

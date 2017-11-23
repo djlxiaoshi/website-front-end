@@ -1,0 +1,7 @@
+
+<div class="djl-upload">
+  <label for="file" class="el-upload el-upload--picture-card" *ngIf="!showPreview"><i class="fa fa-plus"></i></label>
+  <label for="file" *ngIf="showPreview"><img src="" alt="" width="50" height="50px" #preview></label>
+  <input class="el-upload__input" name="name" type="file" accept="accept" id="file" (change)="onFileSelect($event)" #file>
+</div>
+

@@ -1,0 +1,43 @@
+.el-upload--picture-card {
+  background-color: #fbfdff;
+  border: 1px dashed #c0ccda;
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: top;
+}
+
+.el-upload {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fa-plus {
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: baseline;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.djl-upload{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.preview{
+  height: 50px;
+  overflow-y: hidden;
+}

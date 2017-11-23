@@ -1,12 +1,46 @@
-<div class="djl-msg-wrap" *ngIf="msgVisible" [@msgVisible]="msgVisible">
-  <a (click)="closeMsgDialog()" class="back-btn">
-      <i class="fa fa-chevron-left" aria-hidden="true"></i>
-  </a>
-  <div class="avatar">
-    <a href="" >
-      <img src="" alt="">
-    </a>
-  </div>
-  <p class="nickname">DJL箫氏</p>
-  <p class="ename">Lyon</p>
+<div class="djl-msg-wrap">
+    <div class="avatar-wrap">
+      <a href="" (click)="changeAvatar()" class="avatar">
+        <img src="assets/images/avatar.png" alt="" #avatar width="50px" height="50px">
+      </a>
+      <p-fileUpload 
+        name="myfile[]" 
+        url="./upload.php"
+        [chooseLabel]="''"
+        mode="basic"
+        [customUpload]="true"
+        accept="image/*"
+        (onSelect)="imageSelect($event)"
+        maxFileSize="1000000">
+      </p-fileUpload>
+
+      <app-djl-upload
+        [name]="'avatar'"
+        [previewWrap]="avatar"
+        method='post'
+        url='https://jsonplaceholder.typicode.com/albums/'
+        accept="image/jpeg,image/png"
+        [maxSize]="200"
+        (onError)="uploadFailed($event)"
+        (onUpload)="uploadSuccess($event)"
+        (onSelect)="fileSelect($event)"
+      ></app-djl-upload>
+    </div>
+    <div class="nickname">
+      <label> 用户名:
+        <input [(ngModel)]="nickname" pInputText />
+      </label>
+    </div>
+    <div class="ename">
+      <label>英文名:
+        <input [(ngModel)]="ename" pInputText />
+      </label>
+    </div>
+    <div>
+      <button pButton type="button" (click)="signUp()" label="退出登录"  class="ui-button-danger"></button>
+    </div>
 </div>
+
+
+<p-growl [value]="msgs"></p-growl>
+

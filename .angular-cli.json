@@ -23,6 +23,7 @@
         "../node_modules/normalize.css/normalize.css",
         "../node_modules/primeng/resources/primeng.min.css",
         "../node_modules/font-awesome/css/font-awesome.min.css",
+        "../node_modules/izitoast/dist/css/iziToast.min.css",
         "theme/cupertino/theme.scss"
       ],
       "scripts": [],
