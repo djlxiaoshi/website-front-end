@@ -30,6 +30,7 @@
     "perfect-scrollbar": "^0.7.1",
     "primeng": "^5.0.0-rc.0",
     "rxjs": "^5.5.2",
+    "sweetalert": "^2.0.8",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
