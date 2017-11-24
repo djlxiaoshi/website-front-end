@@ -18,7 +18,7 @@ export class DjlUploadComponent implements OnInit {
   @Input() maxSize: string;
   @Input() multiple = true;
   
-  @Input() previewWrap: ElementRef;
+  @Input() previewWrap: HTMLImageElement;
 
   @Output() onUpload = new EventEmitter<any>();
   @Output() onError = new EventEmitter<any>();
@@ -44,6 +44,11 @@ export class DjlUploadComponent implements OnInit {
         if (this.isImage(file)) {
           file.objectURL = window.URL.createObjectURL(file);
           if (this.previewWrap) {
+            // DOM 类型判断
+            if (this.previewWrap.nodeName !== 'IMG') {
+              this.onError.emit('previewWrap属性DOM类型不为IMG');
+              return;
+            }
             setTimeout(() => {
               this.setImagePreview(this.previewWrap, file.objectURL);
               this.showPreview = false;

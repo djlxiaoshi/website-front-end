@@ -1,26 +1,14 @@
 <div class="djl-msg-wrap">
     <div class="avatar-wrap">
-      <a href="" (click)="changeAvatar()" class="avatar">
+      <a href="" (click)="changeAvatar()" class="avatar" #test>
         <img src="assets/images/avatar.png" alt="" #avatar width="50px" height="50px">
       </a>
-      <p-fileUpload 
-        name="myfile[]" 
-        url="./upload.php"
-        [chooseLabel]="''"
-        mode="basic"
-        [customUpload]="true"
-        accept="image/*"
-        (onSelect)="imageSelect($event)"
-        maxFileSize="1000000">
-      </p-fileUpload>
-
       <app-djl-upload
         [name]="'avatar'"
         [previewWrap]="avatar"
         method='post'
         url='https://jsonplaceholder.typicode.com/albums/'
         accept="image/jpeg,image/png"
-        [maxSize]="200"
         (onError)="uploadFailed($event)"
         (onUpload)="uploadSuccess($event)"
         (onSelect)="fileSelect($event)"
