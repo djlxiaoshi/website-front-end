@@ -4,6 +4,7 @@ import {ComplexRoute} from './complex.routes';
 import {HomeComponent} from '../home/home.component';
 
 import {JavascriptComponent} from '../articles/javascript/javascript.component';
+import {ArticleTmplComponent} from '../article-tmpl/article-tmpl.component';
 import {DjlMsgComponent} from '../djl-msg/djl-msg.component';
 
 
@@ -73,6 +74,13 @@ export const routes: ComplexRoute[] = [
     crIcon: 'fa-coffee',
     crIsNav: true,
     component: JavascriptComponent
+  },
+  {
+    path: 'book',
+    crName: '文章模板',
+    crIcon: 'fa-book',
+    crIsNav: true,
+    component: ArticleTmplComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

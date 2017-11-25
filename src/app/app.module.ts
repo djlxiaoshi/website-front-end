@@ -19,6 +19,7 @@ import { JavascriptComponent } from './articles/javascript/javascript.component'
 import { DjlMsgComponent } from './djl-msg/djl-msg.component';
 import { SealScrollDirective } from './shared/directive/seal-scroll.directive';
 import { DjlUploadComponent } from './shared/djl-upload/djl-upload.component';
+import { ArticleTmplComponent } from './article-tmpl/article-tmpl.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DjlUploadComponent } from './shared/djl-upload/djl-upload.component';
     JavascriptComponent,
     DjlMsgComponent,
     SealScrollDirective,
-    DjlUploadComponent
+    DjlUploadComponent,
+    ArticleTmplComponent
   ],
   imports: [
     BrowserModule,

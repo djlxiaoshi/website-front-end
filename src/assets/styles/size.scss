@@ -1,0 +1,22 @@
+.--mini{
+  padding: 0.16rem 0.25rem !important;
+}
+
+.--small{
+  padding: .25rem 1rem
+}
+
+
+.--middle{
+  padding: .25rem 1rem
+}
+
+.--large{
+  padding: .25rem 1rem
+}
+
+.--btn-mini{
+  span {
+    @extend .--mini;
+  }
+}

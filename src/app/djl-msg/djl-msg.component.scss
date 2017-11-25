@@ -3,7 +3,12 @@
   height: 100%;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  .msg-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .avatar, .nickname, .ename{
     margin: 10px 20px;
   }
@@ -21,24 +26,5 @@
   }
   .ename{
 
-  }
-}
-
-/deep/ .ui-fileupload-choose{
-  background-color: #fbfdff;
-  border: 1px dashed #c0ccda;
-  border-radius: 6px;
-  box-sizing: border-box;
-  width: 50px;
-  height: 50px;
-  line-height: 146px;
-  vertical-align: middle;
-  &:hover{
-    background-color: #fbfdff;
-    border: 1px dashed #c0ccda;
-  }
-  .ui-button-icon-left{
-    left: 16px;
-    color: #8c939d;
   }
 }

@@ -1,34 +1,37 @@
 <div class="djl-msg-wrap">
-    <div class="avatar-wrap">
-      <a href="" (click)="changeAvatar()" class="avatar" #test>
-        <img src="assets/images/avatar.png" alt="" #avatar width="50px" height="50px">
-      </a>
-      <app-djl-upload
-        [name]="'avatar'"
-        [previewWrap]="avatar"
-        method='post'
-        url='https://jsonplaceholder.typicode.com/albums/'
-        accept="image/jpeg,image/png"
-        (onError)="uploadFailed($event)"
-        (onUpload)="uploadSuccess($event)"
-        (onSelect)="fileSelect($event)"
-      ></app-djl-upload>
+  <div class="panel panel-info">
+    <div class="panel-heading">用户信息</div>
+    <div class="panel-body msg-content">
+      <div class="avatar-wrap">
+        <a href="" (click)="changeAvatar()" class="avatar">
+          <img src="assets/images/avatar.png" alt="" #avatar width="50px" height="50px">
+        </a>
+        <app-djl-upload
+          [name]="'avatar'"
+          [previewWrap]="avatar"
+          method='post'
+          url='https://jsonplaceholder.typicode.com/albums/'
+          accept="image/jpeg,image/png"
+          (onError)="uploadFailed($event)"
+          (onUpload)="uploadSuccess($event)"
+          (onSelect)="fileSelect($event)">
+        </app-djl-upload>
+      </div>
+      <div>
+        <div class="form-group nickname">
+          <label for="exampleInputEmail1">Nickname</label>
+          <input type="text" class="form-control" [(ngModel)]="nickname">
+        </div>
+
+        <div class="form-group ename">
+          <label for="exampleInputEmail1">Ename</label>
+          <input type="text" class="form-control" [(ngModel)]="ename">
+        </div>
+      </div>
+      <div>
+        <button pButton type="button" (click)="signUp()" label="退出登录" class="ui-button-danger"></button>
+      </div>
     </div>
-    <div class="nickname">
-      <label> 用户名:
-        <input [(ngModel)]="nickname" pInputText />
-      </label>
-    </div>
-    <div class="ename">
-      <label>英文名:
-        <input [(ngModel)]="ename" pInputText />
-      </label>
-    </div>
-    <div>
-      <button pButton type="button" (click)="signUp()" label="退出登录"  class="ui-button-danger"></button>
-    </div>
+
+  </div>
 </div>
-
-
-<p-growl [value]="msgs"></p-growl>
-

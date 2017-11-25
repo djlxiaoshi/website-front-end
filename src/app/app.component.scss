@@ -3,11 +3,12 @@
   display: flex;
 }
 .menu-sidebar{
-  flex: 0 0 150;
+  flex: 0 0 250px;
 }
 
 .router-contianer{
   flex: 1;
+  min-height: 100vh;
 }
 
 #menu-icon-wrap{

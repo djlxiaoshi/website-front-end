@@ -4,3 +4,8 @@
 
  - Angular5  
  - PrimeNg
+ - Bootstrap
+
+ ## 环境
+
+ - node 6.9.5

@@ -1,0 +1,89 @@
+.article-wrap {
+  padding-left: 0px;
+  .article {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    .content {
+      flex: 1;
+      p {
+        position: relative;
+        line-height: 1.6rem;
+        /*设置容器高度为3倍行高就是显示3行*/
+        height: 6.4rem;
+        overflow: hidden;
+      }
+      p::after {
+        content: '...';
+        font-weight: bold;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: 0 8px 3px 4px;
+        background: #fff;
+      }
+    }
+    .picture {
+      flex: 0 0 150px;
+      height: 120px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .article-wrap {
+    font-size: 1.2rem;
+    .article {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      .content {
+        flex: 1;
+        box-sizing: border-box;
+        margin-right: 10px;
+        overflow-x: hidden;
+        h4 {
+          width: 100%;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 1.2rem;
+          position: relative;
+          line-height: 1.4rem;
+          /*设置容器高度为3倍行高就是显示3行*/
+          height: 5.4rem;
+          overflow: hidden;
+        }
+      }
+      .picture {
+        flex: 0 0 120px;
+        height: 100px;
+      }
+      .msg{
+        width: 100%;
+        a:not(.tag) {
+          margin-right: 5px;
+          color: #b4b4b4;
+          text-decoration: none;
+          hover: {
+            color: #787878
+          }
+        }
+        .tag{
+          margin-right: 5px;
+          border-radius: 3px;
+          border: 1px solid lightsalmon;
+          text-align: center;
+          color: lightsalmon;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
