@@ -6,6 +6,7 @@ import {HomeComponent} from '../home/home.component';
 import {JavascriptComponent} from '../articles/javascript/javascript.component';
 import {ArticleTmplComponent} from '../article-tmpl/article-tmpl.component';
 import {DjlMsgComponent} from '../djl-msg/djl-msg.component';
+import {DjlEditorComponent} from '../shared/djl-editor/djl-editor.component';
 
 
 export const routes: ComplexRoute[] = [
@@ -81,6 +82,13 @@ export const routes: ComplexRoute[] = [
     crIcon: 'fa-book',
     crIsNav: true,
     component: ArticleTmplComponent
+  },
+  {
+    path: 'editor',
+    crName: '编辑器',
+    crIcon: 'fa-pencil',
+    crIsNav: true,
+    component: DjlEditorComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

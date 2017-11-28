@@ -13,13 +13,17 @@ import { MenuLeftComponent } from './menu-left/menu-left.component';
 import {RoutesModule} from './routing/routes.module';
 
 // primeNG
-import {ButtonModule, PanelMenuModule, SidebarModule, DialogModule, InputTextModule, FileUploadModule, GrowlModule} from 'primeng/primeng';
+import {ButtonModule, PanelMenuModule, SidebarModule,
+  DialogModule, InputTextModule, FileUploadModule,
+  GrowlModule, EditorModule} from 'primeng/primeng';
+
 import { ArticlesComponent } from './articles/articles.component';
 import { JavascriptComponent } from './articles/javascript/javascript.component';
 import { DjlMsgComponent } from './djl-msg/djl-msg.component';
 import { SealScrollDirective } from './shared/directive/seal-scroll.directive';
 import { DjlUploadComponent } from './shared/djl-upload/djl-upload.component';
 import { ArticleTmplComponent } from './article-tmpl/article-tmpl.component';
+import { DjlEditorComponent } from './shared/djl-editor/djl-editor.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,8 @@ import { ArticleTmplComponent } from './article-tmpl/article-tmpl.component';
     DjlMsgComponent,
     SealScrollDirective,
     DjlUploadComponent,
-    ArticleTmplComponent
+    ArticleTmplComponent,
+    DjlEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,8 @@ import { ArticleTmplComponent } from './article-tmpl/article-tmpl.component';
     DialogModule,
     InputTextModule,
     FileUploadModule,
-    GrowlModule
+    GrowlModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

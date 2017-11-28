@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./javascript.component.scss']
 })
 export class JavascriptComponent implements OnInit {
+  text = 'hello world';
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

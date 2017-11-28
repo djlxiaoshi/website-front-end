@@ -6,3 +6,5 @@ interface NodeModule {
 
 declare var require: any;
 
+declare var Quill: any;
+
