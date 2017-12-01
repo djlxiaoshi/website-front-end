@@ -7,7 +7,8 @@ import {JavascriptComponent} from '../articles/javascript/javascript.component';
 import {ArticleTmplComponent} from '../article-tmpl/article-tmpl.component';
 import {DjlMsgComponent} from '../djl-msg/djl-msg.component';
 import {DjlEditorComponent} from '../shared/djl-editor/djl-editor.component';
-
+import {DragTestComponent} from '../drag-test/drag-test.component';
+import {DjlMdEditorComponent} from '../shared/djl-md-editor/djl-md-editor.component';
 
 export const routes: ComplexRoute[] = [
   {
@@ -89,6 +90,20 @@ export const routes: ComplexRoute[] = [
     crIcon: 'fa-pencil',
     crIsNav: true,
     component: DjlEditorComponent
+  },
+  {
+    path: 'mdEditor',
+    crName: 'Markdown编辑器',
+    crIcon: 'fa-pencil',
+    crIsNav: true,
+    component: DjlMdEditorComponent
+  },
+  {
+    path: 'drag',
+    crName: '拖拽',
+    crIcon: 'fa-arrows-alt',
+    crIsNav: true,
+    component: DragTestComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
