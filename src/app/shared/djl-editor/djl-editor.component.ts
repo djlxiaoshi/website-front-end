@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
+const showdown = require('showdown');
+const converter = new showdown.Converter();
+
 @Component({
   selector: 'app-djl-editor',
   templateUrl: './djl-editor.component.html',
@@ -7,28 +10,23 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DjlEditorComponent implements OnInit {
   @Input() toolbarOptions;
+  @Input() editorType = '';
 
   constructor() { }
 
   ngOnInit() {
-    const toolbarOptions = {
-      handlers: {
-        // handlers object will be merged with default handlers object
-        'link': function(value) {
-          if (value) {
-            var href = prompt('Enter the URL');
-            this.quill.format('link', href);
-          } else {
-            this.quill.format('link', false);
-          }
-        }
-      }
-    }
-    
     const quill = new Quill('#editor', {
+      theme: 'bubble',
       modules: {
-        toolbar: toolbarOptions
+        
       }
+      
+    });
+
+    quill.on('text-change', function(delta, oldDelta, source) {
+      const text = quill.getText();
+      const htmlOutput = converter.makeHtml(text);
+      document.getElementById('preview').innerHTML = htmlOutput;
     });
 
     quill.keyboard.addBinding({

@@ -1,0 +1,21 @@
+<ng-container>
+  <div class="markdown-editor-wrap">
+    <div class="text-area">
+        <div class="form-group title-input" *ngIf="hasTitleInput">
+          <input type="text" class="form-control" placeholder="请输入文章标题">
+        </div>
+        <div class="tools-bar" *ngIf="hasToolsBar">
+          <div class="left-bar"></div>
+          <div class="right-bar">
+            <i class="fa fa-columns onlyPC" aria-hidden="true" *ngIf="isFullScreen && hasPreview" (click)="toggleScreen()"></i>
+            <i class="fa fa-expand onlyPC" aria-hidden="true" *ngIf="!isFullScreen && hasPreview" (click)="toggleScreen()"></i>
+            <i class="fa fa-floppy-o" aria-hidden="true" (click)="saveContent()"></i>
+          </div>
+          
+        </div>
+      <textarea id="text-area" rows="6" (input)="inputChange($event)" [(ngModel)]="content"></textarea>
+    </div>
+    <div class="preivew-area" #previewArea [innerHTML]="htmlContent" *ngIf="hasPreview && !isFullScreen">
+    </div>
+  </div>
+</ng-container>

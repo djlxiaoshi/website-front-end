@@ -24,6 +24,10 @@ import { SealScrollDirective } from './shared/directive/seal-scroll.directive';
 import { DjlUploadComponent } from './shared/djl-upload/djl-upload.component';
 import { ArticleTmplComponent } from './article-tmpl/article-tmpl.component';
 import { DjlEditorComponent } from './shared/djl-editor/djl-editor.component';
+import { DragTestComponent } from './drag-test/drag-test.component';
+
+import {DragulaModule} from 'ng2-dragula';
+import { DjlMdEditorComponent } from './shared/djl-md-editor/djl-md-editor.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,9 @@ import { DjlEditorComponent } from './shared/djl-editor/djl-editor.component';
     SealScrollDirective,
     DjlUploadComponent,
     ArticleTmplComponent,
-    DjlEditorComponent
+    DjlEditorComponent,
+    DragTestComponent,
+    DjlMdEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,8 @@ import { DjlEditorComponent } from './shared/djl-editor/djl-editor.component';
     InputTextModule,
     FileUploadModule,
     GrowlModule,
-    EditorModule
+    EditorModule,
+    DragulaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
