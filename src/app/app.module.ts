@@ -2,8 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterModule} from '@angular/router';
-import {HttpModule} from '@angular/http';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,7 +14,7 @@ import {RoutesModule} from './routing/routes.module';
 // primeNG
 import {ButtonModule, PanelMenuModule, SidebarModule,
   DialogModule, InputTextModule, FileUploadModule,
-  GrowlModule, EditorModule} from 'primeng/primeng';
+  GrowlModule, EditorModule, TooltipModule} from 'primeng/primeng';
 
 import { ArticlesComponent } from './articles/articles.component';
 import { JavascriptComponent } from './articles/javascript/javascript.component';
@@ -57,6 +56,7 @@ import { DjlMdEditorComponent } from './shared/djl-md-editor/djl-md-editor.compo
     InputTextModule,
     FileUploadModule,
     GrowlModule,
+    TooltipModule,
     EditorModule,
     DragulaModule
   ],

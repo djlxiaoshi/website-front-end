@@ -1,21 +1,35 @@
 <ng-container>
   <div class="markdown-editor-wrap">
-    <div class="text-area">
+    <div class="text-area" *ngIf="screenMode !== isFullPreview">
         <div class="form-group title-input" *ngIf="hasTitleInput">
           <input type="text" class="form-control" placeholder="请输入文章标题">
         </div>
         <div class="tools-bar" *ngIf="hasToolsBar">
           <div class="left-bar"></div>
           <div class="right-bar">
-            <i class="fa fa-columns onlyPC" aria-hidden="true" *ngIf="isFullScreen && hasPreview" (click)="toggleScreen()"></i>
-            <i class="fa fa-expand onlyPC" aria-hidden="true" *ngIf="!isFullScreen && hasPreview" (click)="toggleScreen()"></i>
-            <i class="fa fa-floppy-o" aria-hidden="true" (click)="saveContent()"></i>
+            <i class="fa fa-columns onlyPC"  *ngIf="screenMode !== isSplitScreen"  title="预览模式" (click)="toggleScreen(1)">{{IS_SPLIT_SCREEN}}</i>
+            <i class="fa fa-desktop"  *ngIf="screenMode !== isFullPreview"  title="全屏预览" (click)="toggleScreen(2)"></i>
+            <i class="fa fa-expand onlyPC"  *ngIf="(screenMode !== isFullWriting)" title="全屏写作"(click)="toggleScreen(3)"></i>
+            <i class="fa fa-floppy-o"  (click)="saveContent()"></i>
           </div>
-          
+
         </div>
-      <textarea id="text-area" rows="6" (input)="inputChange($event)" [(ngModel)]="content"></textarea>
+      <textarea id="text-area" (input)="inputChange($event)" [(ngModel)]="content" [rows]="rows">
+      </textarea>
     </div>
-    <div class="preivew-area" #previewArea [innerHTML]="htmlContent" *ngIf="hasPreview && !isFullScreen">
+    <div class="preivew-wrap"  *ngIf="screenMode !== isFullWriting">
+      <div class="preview-title"></div>
+      <div class="tools-bar" *ngIf="hasToolsBar">
+        <div class="left-bar"></div>
+        <div class="right-bar">
+          <i class="fa fa-columns onlyPC"  *ngIf="screenMode !== isSplitScreen"  title="预览模式" (click)="toggleScreen(1)">{{IS_SPLIT_SCREEN}}</i>
+          <i class="fa fa-desktop"  *ngIf="screenMode !== isFullPreview"  title="全屏预览" (click)="toggleScreen(2)"></i>
+          <i class="fa fa-expand onlyPC"  *ngIf="(screenMode !== isFullWriting)" title="全屏写作"(click)="toggleScreen(3)"></i>
+        </div>
+      </div>
+      <div class="preview-area" #previewArea [innerHTML]="htmlContent">
+
+      </div>
     </div>
   </div>
 </ng-container>

@@ -2,6 +2,10 @@ import { Component, OnInit, ViewChild, Input } from '@angular/core';
 const showdown = require('showdown');
 const converter = new showdown.Converter();
 
+const IS_SPLIT_SCREEN = 1;
+const IS_FULL_PREVIEW = 2;
+const IS_FULL_WRITING = 3;
+
 @Component({
   selector: 'app-djl-md-editor',
   templateUrl: './djl-md-editor.component.html',
@@ -10,9 +14,14 @@ const converter = new showdown.Converter();
 export class DjlMdEditorComponent implements OnInit {
   @ViewChild('previewArea') previewArea;
 
-  @Input() hasPreview = true;
   @Input() hasToolsBar = true;
   @Input() hasTitleInput = true;
+  @Input() rows = 7;
+
+  private screenMode = 1;
+  isSplitScreen = IS_SPLIT_SCREEN;
+  isFullPreview = IS_FULL_PREVIEW;
+  isFullWriting = IS_FULL_WRITING;
 
   constructor() { }
   content: string;
@@ -24,7 +33,7 @@ export class DjlMdEditorComponent implements OnInit {
   }
 
   inputChange(value) {
-    if (!this.isFullScreen) {
+    if (this.isSplitScreen) {
       setTimeout(() => {
         const htmlOutput = converter.makeHtml(this.content);
         this.htmlContent = htmlOutput;
@@ -36,8 +45,8 @@ export class DjlMdEditorComponent implements OnInit {
     // 保存内容
   }
 
-  toggleScreen() {
-    this.isFullScreen = !this.isFullScreen;
+  toggleScreen(status) {
+    this.screenMode = status;
   }
 
 }
