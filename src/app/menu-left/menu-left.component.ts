@@ -1,7 +1,6 @@
-import { Component, OnInit, transition } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/primeng';
 
-import {routes} from '../routing/routes.config';
 import MenuList from './build.menu';
 
 @Component({
@@ -11,7 +10,6 @@ import MenuList from './build.menu';
 })
 export class MenuLeftComponent implements OnInit {
 
-  menus;
   constructor() { }
 
   private items: MenuItem[];

@@ -26,5 +26,5 @@ export class SealScrollDirective implements AfterViewInit {
         Ps.update(this.el.nativeElement);
       }, 450);
     });
-  };
+  }
 }
