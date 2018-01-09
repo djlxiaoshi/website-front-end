@@ -27,6 +27,8 @@ import { DragTestComponent } from './drag-test/drag-test.component';
 
 import {DragulaModule} from 'ng2-dragula';
 import { DjlMdEditorComponent } from './shared/djl-md-editor/djl-md-editor.component';
+import { WriteArticleComponent } from './write-article/write-article.component';
+import { AboutMeComponent } from './core/about-me/about-me.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { DjlMdEditorComponent } from './shared/djl-md-editor/djl-md-editor.compo
     ArticleTmplComponent,
     DjlEditorComponent,
     DragTestComponent,
-    DjlMdEditorComponent
+    DjlMdEditorComponent,
+    WriteArticleComponent,
+    AboutMeComponent
   ],
   imports: [
     BrowserModule,

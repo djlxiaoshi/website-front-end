@@ -1,5 +1,6 @@
 .markdown-editor-wrap {
   width: 100%;
+  height: 100%;
   display: flex;
   border: 1px solid #e5e5e5;
   .text-area{
@@ -52,15 +53,34 @@
   height: 40px;
   line-height: 40px;
   background-color: #DEDEDE;
-  .left-bar{
-
-  }
-  .right-bar{
-    i{
+  .left-bar, .right-bar{
+    height: 100%;
+    .icon-btn{
       font-size: 16px;
       margin-left: 10px;
       cursor: pointer;
     }
+  }
+  .left-bar{
+
+  }
+  .right-bar{
+    .post-article{
+      display: inline-block;
+      padding: 0 10px;
+      height: 100%;
+      cursor: pointer;
+      color: #595959;
+      text-decoration: none;
+      &:hover{
+        background-color: #595959;
+        color: #fff;
+      }
+      .icon-btn{
+        margin-left: 0;
+      }
+    }
+    margin-left: auto;
   }
 }
 

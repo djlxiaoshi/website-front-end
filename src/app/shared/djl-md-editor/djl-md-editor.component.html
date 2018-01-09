@@ -5,12 +5,17 @@
           <input type="text" class="form-control" placeholder="请输入文章标题">
         </div>
         <div class="tools-bar" *ngIf="hasToolsBar">
-          <div class="left-bar"></div>
+          <div class="left-bar">
+            <i class="fa fa-columns icon-btn onlyPC"  *ngIf="screenMode !== isSplitScreen"  title="预览模式" (click)="toggleScreen(1)">{{IS_SPLIT_SCREEN}}</i>
+            <i class="fa fa-desktop icon-btn"  *ngIf="screenMode !== isFullPreview"  title="全屏预览" (click)="toggleScreen(2)"></i>
+            <i class="fa fa-expand icon-btn onlyPC"  *ngIf="(screenMode !== isFullWriting)" title="全屏写作"(click)="toggleScreen(3)"></i>
+            <i class="fa fa-floppy-o icon-btn"  (click)="saveContent()"></i>
+          </div>
           <div class="right-bar">
-            <i class="fa fa-columns onlyPC"  *ngIf="screenMode !== isSplitScreen"  title="预览模式" (click)="toggleScreen(1)">{{IS_SPLIT_SCREEN}}</i>
-            <i class="fa fa-desktop"  *ngIf="screenMode !== isFullPreview"  title="全屏预览" (click)="toggleScreen(2)"></i>
-            <i class="fa fa-expand onlyPC"  *ngIf="(screenMode !== isFullWriting)" title="全屏写作"(click)="toggleScreen(3)"></i>
-            <i class="fa fa-floppy-o"  (click)="saveContent()"></i>
+            <a class="post-article">
+              <i class="fa fa-paper-plane icon-btn" aria-hidden="true" title="发布"></i>
+              <span>发布文章</span>
+            </a>
           </div>
 
         </div>

@@ -9,6 +9,8 @@ import {DjlMsgComponent} from '../djl-msg/djl-msg.component';
 import {DjlEditorComponent} from '../shared/djl-editor/djl-editor.component';
 import {DragTestComponent} from '../drag-test/drag-test.component';
 import {DjlMdEditorComponent} from '../shared/djl-md-editor/djl-md-editor.component';
+import {WriteArticleComponent} from '../write-article/write-article.component';
+import {AboutMeComponent} from '../core/about-me/about-me.component';
 
 export const routes: ComplexRoute[] = [
   {
@@ -68,7 +70,7 @@ export const routes: ComplexRoute[] = [
     crName: '关于本人',
     crIcon: 'fa-user',
     crIsNav: true,
-    component: JavascriptComponent
+    component: AboutMeComponent
   },
   {
     path: 'life',
@@ -104,6 +106,11 @@ export const routes: ComplexRoute[] = [
     crIcon: 'fa-arrows-alt',
     crIsNav: true,
     component: DragTestComponent
+  },
+  {
+    path: 'writeArticle',
+    crIsNav: false,
+    component: WriteArticleComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];
