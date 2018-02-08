@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
+
+import {FetchService} from '../../core/services/fetch.service';
+
 const showdown = require('showdown');
 const converter = new showdown.Converter();
 
@@ -23,7 +26,9 @@ export class DjlMdEditorComponent implements OnInit {
   isFullPreview = IS_FULL_PREVIEW;
   isFullWriting = IS_FULL_WRITING;
 
-  constructor() { }
+  constructor(
+    private fetchService: FetchService
+  ) { }
   content: string;
   htmlContent;
 
@@ -43,6 +48,12 @@ export class DjlMdEditorComponent implements OnInit {
 
   saveContent() {
     // 保存内容
+  }
+
+  post() {
+    this.fetchService.get('user/login', {}, true).subscribe(data => {
+      debugger;
+    })
   }
 
   toggleScreen(status) {

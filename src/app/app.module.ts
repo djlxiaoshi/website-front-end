@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule  } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -30,6 +30,9 @@ import { DjlMdEditorComponent } from './shared/djl-md-editor/djl-md-editor.compo
 import { WriteArticleComponent } from './write-article/write-article.component';
 import { AboutMeComponent } from './core/about-me/about-me.component';
 
+import {FetchService} from './core/services/fetch.service';
+import {IziToastService} from './core/services/izitoast.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +55,7 @@ import { AboutMeComponent } from './core/about-me/about-me.component';
     BrowserAnimationsModule,
     RoutesModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
     ButtonModule,
     PanelMenuModule,
     SidebarModule,
@@ -64,7 +67,7 @@ import { AboutMeComponent } from './core/about-me/about-me.component';
     EditorModule,
     DragulaModule
   ],
-  providers: [],
+  providers: [FetchService, IziToastService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

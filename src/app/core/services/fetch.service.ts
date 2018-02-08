@@ -2,37 +2,43 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/observable';
 
 import { IziToastService } from './izitoast.service';
+import {HttpClient} from '@angular/common/http';
+import {HttpHeaders} from '@angular/common/http';
+
+import {environment} from '../../../environments/environment';
 
 const NProgress = require('nprogress');
 
 @Injectable()
 export class FetchService {
-
+  private apiUrl = environment['apiUrl'];
   constructor(
-    private http: Http,
+    private http: HttpClient,
     private iziToastService: IziToastService
   ) { }
 
   get (url, params, hasWarning = false): Observable<any> {
     return Observable.create((sub) => {
-      const headers = new Headers();
+      const _url = this.apiUrl + url;
+      const headers = new HttpHeaders();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
       NProgress.start();
-      this.http.get(url + this.formatData(params), {
+      this.http.get(_url + this.formatData(params), {
         headers        : headers,
         withCredentials: true
       }).subscribe({
-        next: (result) => {
+        next: (res) => {
+          debugger;
           NProgress.done();
-          if (result['error_code'] > 0) {
-            sub.next(result.data);
+          if (res['error_code'] > 0) {
+            sub.next(res['data']);
           } else {
             // 错误提示
             if (hasWarning) {
-              this.iziToastService.error('Error', result['error_message'] || '返回码小于0');
+              this.iziToastService.error('Error', res['message'] || '返回码小于0');
             }
-            sub.error(result);
+            sub.error(res);
           }
           sub.complete();
         },
@@ -46,21 +52,21 @@ export class FetchService {
 
   post (url, params, hasWarning = false): Observable<any> {
     return Observable.create((sub) => {
-      const headers = new Headers();
+      const headers = new HttpHeaders();
       headers.append('Content-Type', 'application/x-www-form-urlencoded');
       this.http.post(url, params, {
         headers        : headers,
         withCredentials: true
       }).subscribe({
-        next: (result) => {
-          if (result['error_code'] > 0) {
-            sub.next(result.data);
+        next: (res) => {
+          if (res['error_code'] > 0) {
+            sub.next(res['data']);
           } else {
             // 错误提示
             if (hasWarning) {
-
+              this.iziToastService.error('Error', res['message'] || '返回码小于0');
             }
-            sub.error(result);
+            sub.error(res);
           }
           sub.complete();
         },
