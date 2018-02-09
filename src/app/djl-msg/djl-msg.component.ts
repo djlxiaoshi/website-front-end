@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from '@angu
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import Tooltips from '../shared/utils/izitoast.util';
+import { FetchService } from '../core/services/fetch.service';
 const swal = require('sweetalert');
 
 
@@ -32,12 +33,15 @@ export class DjlMsgComponent implements OnInit {
 
   private nickname = 'DJL箫氏';
   private ename = 'Lyon';
+  private password = '123';
 
   msgs;
 
   uploadedFiles = [];
 
-  constructor() { }
+  constructor(
+    private fetchService: FetchService
+  ) { }
 
   ngOnInit() {
   }
@@ -53,10 +57,10 @@ export class DjlMsgComponent implements OnInit {
   }
 
   uploadSuccess(event) {
-    debugger
+
   }
 
-  signUp() {
+  logOut() {
     swal({
       title: '确定要退出登录吗？',
       text: 'Once deleted, you will not be able to recover this imaginary file!',
@@ -65,13 +69,13 @@ export class DjlMsgComponent implements OnInit {
       dangerMode: true,
     })
     .then((willDelete) => {
-      if (willDelete) {
-        swal('aready exit', {
-          icon: 'success',
-        });
-      }
+      this.fetchService.get('v1/users/logout', {}, true).subscribe(data => {
+
+      });
     });
   }
+
+  save() {}
 
   closeMsgDialog() {
     this.msgVisibleChange.emit(false);

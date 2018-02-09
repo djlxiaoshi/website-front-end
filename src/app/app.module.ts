@@ -29,9 +29,11 @@ import {DragulaModule} from 'ng2-dragula';
 import { DjlMdEditorComponent } from './shared/djl-md-editor/djl-md-editor.component';
 import { WriteArticleComponent } from './write-article/write-article.component';
 import { AboutMeComponent } from './core/about-me/about-me.component';
+import { DjlLoginComponent } from './core/djl-login/djl-login.component';
 
 import {FetchService} from './core/services/fetch.service';
 import {IziToastService} from './core/services/izitoast.service';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import {IziToastService} from './core/services/izitoast.service';
     DragTestComponent,
     DjlMdEditorComponent,
     WriteArticleComponent,
-    AboutMeComponent
+    AboutMeComponent,
+    DjlLoginComponent
   ],
   imports: [
     BrowserModule,

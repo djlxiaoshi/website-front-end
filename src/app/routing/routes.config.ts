@@ -1,5 +1,3 @@
-import {Routes, Route} from '@angular/router';
-
 import {ComplexRoute} from './complex.routes';
 import {HomeComponent} from '../home/home.component';
 
@@ -11,6 +9,7 @@ import {DragTestComponent} from '../drag-test/drag-test.component';
 import {DjlMdEditorComponent} from '../shared/djl-md-editor/djl-md-editor.component';
 import {WriteArticleComponent} from '../write-article/write-article.component';
 import {AboutMeComponent} from '../core/about-me/about-me.component';
+import {DjlLoginComponent} from '../core/djl-login/djl-login.component';
 
 export const routes: ComplexRoute[] = [
   {
@@ -111,6 +110,13 @@ export const routes: ComplexRoute[] = [
     path: 'writeArticle',
     crIsNav: false,
     component: WriteArticleComponent
+  },
+  {
+    path: 'login',
+    crName: '登录',
+    crIsNav: true,
+    crIcon: 'fa-arrows-alt',
+    component: DjlLoginComponent
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' }
 ];

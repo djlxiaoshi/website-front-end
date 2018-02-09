@@ -29,9 +29,8 @@ export class FetchService {
         withCredentials: true
       }).subscribe({
         next: (res) => {
-          debugger;
           NProgress.done();
-          if (res['error_code'] > 0) {
+          if (res['error_code'] >= 0) {
             sub.next(res['data']);
           } else {
             // 错误提示
@@ -77,13 +76,41 @@ export class FetchService {
     });
   }
 
+  put (url, params, hasWarning = false): Observable<any> {
+    return Observable.create((sub) => {
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/x-www-form-urlencoded');
+      this.http.post(url, params, {
+        headers        : headers,
+        withCredentials: true
+      }).subscribe({
+        next: (res) => {
+          if (res['error_code'] > 0) {
+            sub.next(res['data']);
+          } else {
+            // 错误提示
+            if (hasWarning) {
+              this.iziToastService.error('Error', res['message'] || '返回码小于0');
+            }
+            sub.error(res);
+          }
+          sub.complete();
+        },
+        error: (err) => {
+          sub.error(err);
+        }
+      });
+    });
+  }
+
   formatData(params) {
     if (typeof params !== 'object' && Array.isArray(params)) {
       console.error('请求参数格式错误');
       return;
     }
     const objNamesList = Object.keys(params);
-    let paramsStr = '?';
+    let paramsStr = '';
+    if (params.length > 0) { paramsStr = '?'; }
     paramsStr += objNamesList.map(key => {
       return `${key}=${encodeURIComponent(params[key])}`;
     }).join('&');

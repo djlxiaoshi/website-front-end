@@ -1,0 +1,22 @@
+<div class="djl-msg-wrap">
+  <div class="panel panel-info">
+    <div class="panel-heading">用户信息</div>
+    <div class="panel-body msg-content">
+      <div>
+        <div class="form-group nickname">
+          <label for="nickname">Nickname</label>
+          <input type="text" class="form-control" [(ngModel)]="nickname" id="nickname">
+        </div>
+        <div class="form-group ename">
+          <label for="password">password</label>
+          <input type="password" class="form-control" [(ngModel)]="password" id="password">
+        </div>
+      </div>
+      <div>
+        <button pButton type="button" (click)="signIn()" label="登录" class="ui-button-success"></button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
